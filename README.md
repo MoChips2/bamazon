@@ -29,7 +29,7 @@ A display of available inventory will show, and they will be prompted to purchas
 ---------------------------------------------------------------
 
 
-A video demonstration of the both customer and manager apps are linked below:
+A video demonstration of both customer and manager apps is linked below:
 
 <a href="https://drive.google.com/file/d/1wWTufRuxu8we3Qd-Jev1X0vmgOZAf7TZ/view?usp=sharing">Bamazon Demo</a>
 
