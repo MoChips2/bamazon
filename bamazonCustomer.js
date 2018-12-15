@@ -16,6 +16,7 @@ connection.connect(function (err) {
     displayInv();
 });
 
+
 // displays all inventory (id, name, dept, price, stock)
 function displayInv() {
     connection.query("SELECT * FROM products", function (err, results) {
@@ -93,14 +94,16 @@ function shop() {
                             function (err) {
                                 if (err) throw err;
                                 console.log("Your order was successfully placed! Total cost: $" + res[0].price)
+                                displayInv();
                             }
                         )
                     } else {
-                        console.log(" Sorry, we only have " + stockQ + " of these in stock!")
+                        console.log(" Sorry, we only have " + stockQ + " of these in stock!");
+                        displayInv();
                     }
 
                 }
-            )
-
+                
+            )    
         })
 }
