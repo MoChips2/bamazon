@@ -118,7 +118,9 @@ function shop() {
                             }
                         )
                     } else {
+                        console.log("\n---------------------------------------------")
                         console.log(" Sorry, we only have " + stockQ + " of these in stock!");
+                        console.log("---------------------------------------------\n")
                         begin();
                     }
 

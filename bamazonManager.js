@@ -173,7 +173,7 @@ function addProduct() {
             {
                 name: "price",
                 type: "input",
-                message: "How much will you intial sell your product for? ",
+                message: "How much will you intially sell your product for? ",
                 validate: function (value) {
                     if (isNaN(value) === false && value > 0) {
                         return true;
