@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "",
+    password: "Vikings-Win",
     database: "bamazon"
 });
 
@@ -23,7 +23,7 @@ function displayInv() {
         if (err) throw err;
         console.log("\n______________WELCOME TO BAMAZON!______________")
         console.log("\n-------------- Current Inventory --------------\n")
-        console.log("ID: | Name: | Dept: | Price: |");
+        console.log(" ID: | Name: | Dept: | Price: |");
         for (let i = 0; i < results.length; i++) {
             var inv = results[i];
             console.log("\n" + " " + inv.item_id + " | " + inv.product_name +
@@ -48,7 +48,7 @@ function shop() {
                 if (isNaN(value) === false && value > 0) {
                     return true;
                 }
-                console.log(" Please enter a number!");
+                console.log(" Please enter a valid number.");
             }
         },
         {
@@ -56,10 +56,10 @@ function shop() {
             type: "input",
             message: "How many units would you like?",
             validate: function (value) {
-                if (isNaN(value) === false) {
+                if (isNaN(value) === false && value > 0) {
                     return true;
                 }
-                console.log(" Please enter a number!");
+                console.log(" Please enter a valid number.");
             }
         }
     ])
