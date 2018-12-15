@@ -21,9 +21,12 @@ VALUES
     SELECT * FROM products;
     
     UPDATE products
-    SET stock_quantity = 20
-    WHERE item_id = 1;
+    SET stock_quantity = 5
+    WHERE item_id = 2;
     
     SELECT * FROM products
     WHERE stock_quantity < 6;
+    
+    DELETE FROM products
+    WHERE item_id = 16;
     

@@ -6,16 +6,33 @@ var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "",
+    password: "Vikings-Win",
     database: "bamazon"
 });
 
 connection.connect(function (err) {
     if (err) throw err;
     // insert starting function below
-    displayInv();
+    begin();
 });
 
+
+function begin() {
+    inquirer
+        .prompt({
+            name: "start",
+            type: "list",
+            message: "Would you like to shop at BAMAZON?",
+            choices: ["SHOP", "LOG OFF"]
+        }).then(function(answer) {
+            if (answer.start === "SHOP") {
+                displayInv();
+            }
+            else {
+                connection.end();
+            }
+        })
+}
 
 // displays all inventory (id, name, dept, price, stock)
 function displayInv() {
@@ -97,12 +114,12 @@ function shop() {
                                 var price = res[0].price * answer.quantity;
                                 console.log("Your order was successfully placed! Total cost: $" + price)
                                 console.log("---------------------------------------------\n")
-                                displayInv();
+                                begin();
                             }
                         )
                     } else {
                         console.log(" Sorry, we only have " + stockQ + " of these in stock!");
-                        displayInv();
+                        begin();
                     }
 
                 }

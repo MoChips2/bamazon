@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "",
+    password: "Vikings-Win",
     database: "bamazon"
 });
 
@@ -23,9 +23,10 @@ function managementTasks() {
             message: "What would you like to do?",
             choices: [
                 "View Products for Sale",
-                "View Low Inventory",
+                "View Low Inventory (>10 items)",
                 "Add to Inventory",
-                "Add New Product"
+                "Add New Product",
+                "Log Off"
             ]
         })
         .then(function (answer) {
@@ -34,7 +35,7 @@ function managementTasks() {
                     viewProducts();
                     break;
 
-                case "View Low Inventory":
+                case "View Low Inventory (>10 items)":
                     viewLowInv();
                     break;
 
@@ -44,6 +45,10 @@ function managementTasks() {
 
                 case "Add New Product":
                     addProduct();
+                    break;
+                
+                case "Log Off":
+                    connection.end();
                     break;
             }
         });
