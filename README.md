@@ -28,6 +28,11 @@ A display of available inventory will show, and they will be prompted to purchas
 
 ---------------------------------------------------------------
 
+
+A video demonstration of the both customer and manager apps are linked below:
+
+<a href="https://drive.google.com/file/d/1wWTufRuxu8we3Qd-Jev1X0vmgOZAf7TZ/view?usp=sharing">Bamazon Demo</a>
+
 ### Technologies Involved
 * MySQL
 * Node.js
