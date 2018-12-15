@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "",
+    password: "Vikings-Win",
     database: "bamazon"
 });
 
@@ -79,6 +79,7 @@ function shop() {
                     // console.log(res[0].product_name + " " + res[0].stock_quantity);
                     var stockQ = res[0].stock_quantity;
                     if (stockQ >= answer.quantity) {
+                        console.log("\n---------------------------------------------")
                         console.log(" " + res[0].product_name + "... we have this in stock!")
                         var newStock = stockQ - answer.quantity;
                         connection.query(
@@ -93,7 +94,9 @@ function shop() {
                             ],
                             function (err) {
                                 if (err) throw err;
-                                console.log("Your order was successfully placed! Total cost: $" + res[0].price)
+                                var price = res[0].price * answer.quantity;
+                                console.log("Your order was successfully placed! Total cost: $" + price)
+                                console.log("---------------------------------------------\n")
                                 displayInv();
                             }
                         )

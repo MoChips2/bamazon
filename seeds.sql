@@ -12,8 +12,8 @@ VALUES
     ("Thriller", "Music", 12.00, 50),
     ("Donut", "Food", 1.00, 12),
     ("Banana", "Food", 1.50, 200),
-    ("Coffee", "Food", 15.00, 5),
-    ("Advil", "Pharmacy", 4.00, 10),
+    ("Coffee", "Food", 15.00, 4),
+    ("Advil", "Pharmacy", 4.00, 9),
     ("Vitamins", "Pharmacy", 13.00, 15);
     
     USE bamazon;
@@ -21,9 +21,9 @@ VALUES
     SELECT * FROM products;
     
     UPDATE products
-    SET stock_quantity = 12
-    WHERE item_id = 9;
+    SET stock_quantity = 20
+    WHERE item_id = 1;
     
+    SELECT * FROM products
+    WHERE stock_quantity < 6;
     
-    
-
